@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mulan Beauty Spa | Head Spa, Facial & Bodywork in Bensalem</title>
+  <meta name="description" content="Mulan Beauty Spa in Bensalem, PA. Explore head spa, bodywork, facial, brow and eyelash services, then book online.">
+  <meta name="theme-color" content="#f3f0e9">
+  <style>
+
+    :root {
+      --ink: #20221d;
+      --ink-soft: #55584f;
+      --pine: #2d382f;
+      --pine-deep: #202821;
+      --pine-soft: #435147;
+      --ivory: #f3f0e9;
+      --paper: #faf8f3;
+      --oat: #e7e1d7;
+      --bronze: #9d7e5d;
+      --bronze-soft: #cbb9a3;
+      --wine: #6f3d45;
+      --muted: #6b6d65;
+      --line: rgba(32, 34, 29, .14);
+      --line-light: rgba(255, 255, 255, .18);
+      --shadow: 0 32px 90px rgba(26, 29, 24, .13);
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Baskerville, Georgia, serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --max: 1380px;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--ivory);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    body.locked { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { color: #fff; background: var(--pine); }
+    :focus-visible { outline: 2px solid var(--bronze); outline-offset: 4px; }
+
+    .shell { width: min(calc(100% - 64px), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--bronze);
+      font-size: .7rem;
+      font-weight: 720;
+      letter-spacing: .2em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+    .section-title {
+      margin-bottom: 22px;
+      font-size: clamp(2.7rem, 5.2vw, 5.35rem);
+      letter-spacing: -.055em;
+      line-height: .96;
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 23px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: .7rem;
+      font-weight: 760;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      transition: transform .25s var(--ease), background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-dark { color: white; background: var(--pine-deep); }
+    .button-dark:hover { background: #111813; }
+    .button-light { color: var(--ink); background: rgba(255,255,255,.94); }
+    .button-light:hover { background: #fff; }
+    .button-line { color: var(--ink); border-color: rgba(32,34,29,.25); background: transparent; }
+    .button-line:hover { border-color: rgba(32,34,29,.52); }
+
+    /* Quiet, transparent hero header that settles into warm ivory after scroll. */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(to bottom, rgba(13,18,14,.32), rgba(13,18,14,0));
+      transition: height .3s ease, color .3s ease, background .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .site-header.scrolled {
+      color: var(--ink);
+      border-color: var(--line);
+      background: rgba(243,240,233,.94);
+      box-shadow: 0 1px 0 rgba(32,34,29,.03);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 84px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 34px;
+      transition: min-height .3s ease;
+    }
+    .site-header.scrolled .header-inner { min-height: 72px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 128px; }
+    .brand img {
+      width: auto;
+      max-width: 152px;
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      transition: filter .3s ease;
+    }
+    .site-header.scrolled .brand img { filter: none; }
+    .brand span { display: none; }
+    .nav { display: flex; justify-content: center; gap: clamp(18px, 2.8vw, 38px); }
+    .nav a {
+      position: relative;
+      font-size: .68rem;
+      font-weight: 690;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .25s var(--ease);
+    }
+    .nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .site-header .header-book { color: var(--ink); background: #fff; }
+    .site-header.scrolled .header-book { color: #fff; background: var(--pine-deep); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      color: inherit;
+      background: transparent;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* Hero: editorial, image-led, intentionally sparse. */
+    .hero {
+      min-height: max(720px, 100svh);
+      display: grid;
+      align-items: end;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(12,16,13,.70) 0%, rgba(12,16,13,.33) 48%, rgba(12,16,13,.08) 100%),
+        linear-gradient(0deg, rgba(10,13,10,.38), transparent 54%),
+        url("https://img.dingliuads.com/file/1788674007838_lQDPJx8iqM724O_NBODNDUCwcgIfEb1N2v4KbSYyiM8RAA_3392_1248.jpg") center / cover;
+    }
+    .hero-inner { padding: 176px 0 66px; }
+    .hero-copy { max-width: 830px; }
+    .hero .eyebrow { color: rgba(255,255,255,.68); }
+    .hero h1 {
+      max-width: 900px;
+      margin-bottom: 28px;
+      font-size: clamp(4.2rem, 8.7vw, 8.9rem);
+      letter-spacing: -.065em;
+      line-height: .86;
+      text-wrap: balance;
+    }
+    .hero p {
+      max-width: 610px;
+      margin-bottom: 32px;
+      color: rgba(255,255,255,.80);
+      font-size: clamp(.98rem, 1.35vw, 1.18rem);
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-actions .button-line { color: #fff !important; border-color: rgba(255,255,255,.44) !important; }
+    .hero-meta {
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      border-top: 1px solid rgba(255,255,255,.28);
+    }
+    .hero-meta div { padding: 20px 24px 0 0; }
+    .hero-meta strong {
+      display: block;
+      margin-bottom: 2px;
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+    .hero-meta span {
+      color: rgba(255,255,255,.55);
+      font-size: .67rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    /* About */
+    .about { padding: 142px 0; background: var(--ivory); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: clamp(55px, 8vw, 125px);
+      align-items: center;
+    }
+    .about-copy { max-width: 610px; }
+    .about-copy p:not(.eyebrow) { color: var(--ink-soft); font-size: 1.03rem; line-height: 1.85; }
+    .about-note {
+      margin-top: 38px;
+      padding: 24px 0 4px 28px;
+      border-left: 1px solid var(--bronze);
+      color: var(--pine-deep);
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      line-height: 1.4;
+    }
+    .gallery-collage {
+      min-height: 690px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.08fr .82fr;
+      grid-template-rows: 1fr .86fr;
+      gap: 14px;
+    }
+    .gallery-collage img {
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 0;
+      transition: transform .9s var(--ease), filter .5s ease;
+    }
+    .gallery-collage img:hover { transform: scale(1.012); }
+    .gallery-collage img:first-child { grid-row: 1 / 3; }
+
+    /* Services: light editorial canvas, not a dark app dashboard. */
+    .services {
+      padding: 132px 0 140px;
+      color: var(--ink);
+      background: var(--paper);
+      overflow: hidden;
+    }
+    .services-head {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(300px,520px);
+      align-items: end;
+      gap: 55px;
+      margin-bottom: 46px;
+    }
+    .services-head p:last-child { max-width: 520px; margin-bottom: 4px; color: var(--ink-soft); line-height: 1.8; }
+    .service-tabs-wrap {
+      position: relative;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+    .service-tabs {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0;
+    }
+    .service-tabs::-webkit-scrollbar { display: none; }
+    .service-tab {
+      flex: 0 0 auto;
+      min-height: 50px;
+      position: relative;
+      padding: 0 16px 14px;
+      border: 0;
+      border-radius: 0;
+      color: #8b8c84;
+      background: transparent;
+      cursor: pointer;
+      font-size: .69rem;
+      font-weight: 720;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+    .service-tab::after {
+      content: "";
+      position: absolute;
+      left: 16px; right: 16px; bottom: -1px;
+      height: 1px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transition: transform .25s var(--ease);
+    }
+    .service-tab[aria-selected="true"] { color: var(--ink); background: transparent; }
+    .service-tab[aria-selected="true"]::after { transform: scaleX(1); }
+
+    .service-stage {
+      display: grid;
+      grid-template-columns: minmax(360px,.88fr) minmax(0,1.12fr);
+      min-height: 700px;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: var(--ivory);
+      box-shadow: none;
+    }
+    .visual-panel { position: relative; min-height: 700px; overflow: hidden; background: #d8d3c8; }
+    .pin-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .55s var(--ease), transform .9s var(--ease);
+    }
+    .pin-slide.active { opacity: 1; pointer-events: auto; }
+    .pin-slide img { width: 100%; height: 100%; object-fit: cover; background: #ded9cf; }
+    .visual-shade {
+      position: absolute; inset: auto 0 0; height: 48%; pointer-events: none;
+      background: linear-gradient(transparent, rgba(13,18,14,.72));
+    }
+    .visual-caption { position: absolute; left: 34px; right: 34px; bottom: 32px; z-index: 2; color: white; }
+    .visual-caption .eyebrow { color: var(--bronze-soft); }
+    .visual-caption h3 {
+      margin-bottom: 10px;
+      font-size: clamp(2.4rem,4.2vw,4.8rem);
+      line-height: .92;
+      letter-spacing: -.055em;
+    }
+    .visual-caption p { max-width: 470px; margin-bottom: 0; color: rgba(255,255,255,.75); font-size: .92rem; line-height: 1.7; }
+    .carousel-controls { position: absolute; z-index: 3; top: 22px; right: 22px; display: flex; gap: 8px; }
+    .carousel-button {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 50%;
+      color: white;
+      background: rgba(20,27,22,.22);
+      backdrop-filter: blur(9px);
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .carousel-button:hover { background: rgba(20,27,22,.55); transform: translateY(-1px); }
+
+    .price-panel { padding: clamp(34px,4.4vw,64px); background: var(--ivory); }
+    .price-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .price-heading h3 { margin: 0; font-size: clamp(2.4rem,4vw,4.2rem); line-height: .95; letter-spacing: -.045em; }
+    .price-heading span { color: var(--muted); font-size: .68rem; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
+    .price-list { display: grid; }
+    .price-item {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 14px 28px;
+      padding: 21px 0 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .price-item h4 {
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-size: 1.23rem;
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+    }
+    .price-item p { margin: 0; max-width: 650px; color: var(--ink-soft); font-size: .86rem; line-height: 1.62; }
+    .price-item .duration {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--bronze);
+      font-size: .68rem;
+      font-weight: 720;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .price { font-family: var(--serif); font-size: 1.5rem; line-height: 1.25; white-space: nowrap; }
+    .price-note { display: block; margin-top: 5px; color: var(--muted); font-family: var(--sans); font-size: .68rem; line-height: 1.45; text-align: right; }
+    .price-actions { padding-top: 30px; display: flex; flex-wrap: wrap; gap: 11px; }
+
+    /* Reviews */
+    .reviews { padding: 136px 0; overflow: hidden; background: var(--ivory); }
+    .reviews-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 52px; }
+    .rating-lockup { text-align: right; }
+    .rating-lockup strong { display: block; font-family: var(--serif); font-size: 2.7rem; font-weight: 400; line-height: 1; }
+    .rating-lockup span { color: var(--muted); font-size: .76rem; }
+    #review-marquees { position: relative; }
+    #review-marquees::before,
+    #review-marquees::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0; bottom: 0;
+      width: min(9vw,130px);
+      pointer-events: none;
+    }
+    #review-marquees::before { left: 0; background: linear-gradient(to right,var(--ivory),transparent); }
+    #review-marquees::after { right: 0; background: linear-gradient(to left,var(--ivory),transparent); }
+    .marquee { display: flex; width: max-content; gap: 14px; margin-bottom: 14px; animation: drift 50s linear infinite; }
+    .marquee.reverse { animation-direction: reverse; animation-duration: 56s; transform: translateX(-10%); }
+    .marquee:hover { animation-play-state: paused; }
+    .review-card {
+      width: min(390px,calc(100vw - 44px));
+      min-height: 236px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 29px 30px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .stars { color: var(--bronze); font-size: .78rem; letter-spacing: .16em; }
+    .review-card blockquote { margin: 24px 0; font-family: var(--serif); font-size: 1.22rem; line-height: 1.48; letter-spacing: -.01em; }
+    .review-card footer { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: .74rem; }
+    @keyframes drift { to { transform: translateX(-50%); } }
+
+    /* FAQ */
+    .faq { padding: 136px 0; background: var(--oat); }
+    .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(48px,8vw,120px); }
+    .faq-intro { position: sticky; top: 118px; align-self: start; }
+    .faq-intro p:not(.eyebrow) { max-width: 390px; color: var(--ink-soft); line-height: 1.8; }
+    .faq-item { border-top: 1px solid rgba(32,34,29,.18); }
+    .faq-item:last-child { border-bottom: 1px solid rgba(32,34,29,.18); }
+    .faq-question {
+      width: 100%;
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 0;
+      border: 0;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--serif);
+      font-size: 1.37rem;
+    }
+    .faq-question span:last-child {
+      width: 35px; height: 35px;
+      flex: none;
+      display: grid; place-items: center;
+      border: 1px solid rgba(32,34,29,.24);
+      border-radius: 50%;
+      font-family: var(--sans);
+      font-size: 1rem;
+      transition: transform .25s ease, background .25s ease;
+    }
+    .faq-question[aria-expanded="true"] span:last-child { transform: rotate(45deg); background: rgba(255,255,255,.38); }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .32s var(--ease); }
+    .faq-answer > div { overflow: hidden; }
+    .faq-answer p { max-width: 700px; margin: 0 0 28px; color: var(--ink-soft); line-height: 1.8; }
+    .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+
+    /* Contact */
+    .contact { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 720px; background: var(--paper); }
+    .map-wrap { min-height: 720px; background: #ddd8ce; }
+    .map-wrap iframe { width: 100%; height: 100%; min-height: 720px; border: 0; filter: saturate(.74) contrast(.96) sepia(.06); }
+    .contact-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(58px,7vw,115px); }
+    .contact-list { margin: 34px 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .contact-row { display: grid; grid-template-columns: 105px 1fr; gap: 20px; padding: 21px 0; border-bottom: 1px solid var(--line); }
+    .contact-row dt { color: var(--bronze); font-size: .67rem; font-weight: 720; letter-spacing: .13em; text-transform: uppercase; }
+    .contact-row dd { margin: 0; font-family: var(--serif); font-size: 1.12rem; line-height: 1.5; }
+
+    /* Footer */
+    .site-footer { padding: 74px 0 92px; color: rgba(255,255,255,.75); background: var(--pine-deep); }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; }
+    .footer-brand { max-width: 520px; }
+    .footer-brand h2 { margin-bottom: 13px; color: white; font-size: clamp(2.4rem,4vw,3.4rem); letter-spacing: -.045em; }
+    .footer-brand p { margin-bottom: 0; color: rgba(255,255,255,.48); }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 22px; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+    .footer-links a:hover { color: #fff; }
+    .copyright { margin-top: 44px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.34); font-size: .7rem; }
+    .mobile-cta { display: none; }
+
+    /* Announcement styled like a premium paper notice, close to the supplied reference. */
+    .announcement {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(22,23,20,.52);
+      backdrop-filter: blur(9px);
+    }
+    .announcement[hidden] { display: none; }
+    .announcement-card {
+      width: min(650px,100%);
+      position: relative;
+      overflow: visible;
+      color: var(--ink);
+      background: #faf7f2;
+      box-shadow: 0 30px 90px rgba(16,17,15,.25);
+    }
+    .announcement-grid { display: grid; grid-template-columns: .78fr 1.22fr; min-height: 410px; }
+    .announcement-art {
+      min-height: 410px;
+      background:
+        linear-gradient(rgba(25,28,23,.06),rgba(25,28,23,.10)),
+        url("https://img.dingliuads.com/file/1788669624757_lQLPKHWU2peX1e_NBmTNCIywzxfJqSab7jwKbSYf2lgPAA_2188_1636.png") center / cover;
+    }
+    .announcement-copy { padding: 48px 42px; }
+    .announcement-copy h2 { margin-bottom: 18px; font-size: 2.65rem; line-height: .98; letter-spacing: -.045em; }
+    .announcement-copy p { color: var(--ink-soft); line-height: 1.7; }
+    .announcement-offers { margin: 28px 0; display: grid; gap: 16px; }
+    .offer { padding-top: 16px; border-top: 1px solid var(--line); }
+    .offer strong { display: block; font-family: var(--serif); font-size: 1.28rem; font-weight: 400; }
+    .offer span { color: var(--ink-soft); font-size: .82rem; }
+    .modal-close {
+      position: absolute;
+      z-index: 2;
+      top: -22px;
+      right: -18px;
+      width: 56px;
+      height: 56px;
+      border: 1px solid #9d969f;
+      border-radius: 50%;
+      color: #807a84;
+      background: #faf7f2;
+      cursor: pointer;
+      font-size: 1.35rem;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .modal-close:hover { transform: rotate(5deg); background: #fff; }
+
+    @media (max-width: 1100px) {
+      .shell { width: min(calc(100% - 48px),var(--max)); }
+      .nav { gap: 18px; }
+      .service-stage { grid-template-columns: minmax(320px,.9fr) minmax(0,1.1fr); }
+      .price-panel { padding: 38px 34px; }
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 18px;
+        right: 18px;
+        padding: 26px 24px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        background: rgba(243,240,233,.98);
+        box-shadow: var(--shadow);
+      }
+      .nav.open { display: flex; }
+      .nav a { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; letter-spacing: -.01em; text-transform: none; }
+      .nav a::after { display: none; }
+      .menu-toggle { display: block; }
+      .header-inner { grid-template-columns: 1fr auto auto; }
+      .header-book { display: none; }
+      .hero-meta { grid-template-columns: repeat(2,1fr); }
+      .about-grid, .faq-grid { grid-template-columns: 1fr; }
+      .gallery-collage { min-height: 560px; }
+      .service-stage { grid-template-columns: 1fr; }
+      .visual-panel { min-height: 590px; }
+      .faq-intro { position: static; }
+      .contact { grid-template-columns: 1fr; }
+      .map-wrap { order: 2; min-height: 480px; }
+      .map-wrap iframe { min-height: 480px; }
+      .contact-copy { padding: 85px 48px; }
+    }
+
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 76px; }
+      .shell { width: min(calc(100% - 34px),var(--max)); }
+      .header-inner, .site-header.scrolled .header-inner { min-height: 70px; }
+      .brand { min-width: 0; }
+      .brand img { max-width: 118px; height: 42px; }
+      .nav { top: 70px; }
+
+      .hero { min-height: 790px; background-position: 61% center; }
+      .hero-inner { padding: 130px 0 42px; }
+      .hero h1 { max-width: 560px; font-size: clamp(3.6rem,17vw,5.4rem); }
+      .hero p { max-width: 520px; font-size: .94rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; max-width: 360px; }
+      .hero-actions .button { width: 100%; }
+      .hero-meta { margin-top: 46px; gap: 0 6px; }
+      .hero-meta div { padding: 15px 8px 0 0; }
+      .hero-meta strong { font-size: 1.08rem; }
+      .hero-meta span { font-size: .59rem; }
+
+      .about, .services, .reviews, .faq { padding: 92px 0; }
+      .section-title { font-size: clamp(2.8rem,13vw,4.3rem); }
+      .about-grid { gap: 48px; }
+      .gallery-collage { min-height: 400px; gap: 8px; }
+      .about-note { padding-left: 20px; }
+
+      .services-head, .reviews-head { display: block; }
+      .services-head p:last-child { margin-top: 22px; }
+      .service-tabs-wrap { margin-right: -17px; }
+      .service-tabs { padding-right: 17px; }
+      .service-tab { padding-inline: 12px; font-size: .64rem; }
+      .service-stage { margin-inline: -17px; border-left: 0; border-right: 0; }
+      .visual-panel { min-height: 500px; }
+      .visual-caption { left: 21px; right: 21px; bottom: 22px; }
+      .visual-caption h3 { font-size: clamp(2.65rem,14vw,4rem); }
+      .carousel-controls { top: 15px; right: 15px; }
+      .price-panel { padding: 30px 20px 34px; }
+      .price-heading { align-items: start; }
+      .price-heading h3 { font-size: clamp(2.5rem,12vw,3.5rem); }
+      .price-heading span { max-width: 90px; white-space: normal; text-align: right; }
+      .price-item { grid-template-columns: minmax(0,1fr) auto; gap: 10px 14px; padding-block: 19px; }
+      .price-item h4 { font-size: 1.13rem; }
+      .price-item p { grid-column: 1 / -1; font-size: .83rem; }
+      .price { font-size: 1.32rem; }
+      .price-note { max-width: 120px; font-size: .62rem; }
+      .price-actions { display: grid; grid-template-columns: 1fr; }
+      .price-actions .button { width: 100%; }
+
+      .rating-lockup { margin-top: 23px; text-align: left; }
+      .review-card { width: min(310px,calc(100vw - 38px)); min-height: 218px; padding: 24px; }
+      .review-card blockquote { font-size: 1.12rem; }
+      #review-marquees::before, #review-marquees::after { width: 28px; }
+
+      .faq-question { min-height: 76px; font-size: 1.19rem; }
+      .faq-answer p { font-size: .92rem; }
+
+      .contact-copy { padding: 78px 24px; }
+      .contact-row { grid-template-columns: 1fr; gap: 5px; }
+      .contact-row dd { font-size: 1.06rem; }
+      .map-wrap, .map-wrap iframe { min-height: 420px; }
+
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+
+      .announcement { padding: 18px; }
+      .announcement-card { width: min(100%,520px); }
+      .announcement-grid { grid-template-columns: 1fr; max-height: calc(100svh - 36px); overflow: auto; }
+      .announcement-art { min-height: 180px; }
+      .announcement-copy { padding: 32px 25px 34px; }
+      .announcement-copy h2 { font-size: 2.28rem; }
+      .modal-close { top: -12px; right: -4px; width: 50px; height: 50px; }
+
+      .mobile-cta {
+        position: fixed;
+        z-index: 48;
+        inset: auto 10px max(10px,env(safe-area-inset-bottom));
+        display: grid;
+        grid-template-columns: .72fr 1.28fr;
+        gap: 7px;
+        padding: 7px;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 999px;
+        background: rgba(26,34,28,.92);
+        box-shadow: 0 12px 38px rgba(14,18,15,.25);
+        backdrop-filter: blur(14px);
+      }
+      .mobile-cta .button { min-height: 47px; padding-inline: 14px; }
+      .site-footer { padding-bottom: 118px; }
+    }
+
+    @media (max-width: 420px) {
+      .hero-meta strong { font-size: 1rem; }
+      .price-item { grid-template-columns: 1fr; }
+      .price { display: flex; align-items: baseline; gap: 8px; }
+      .price-note { max-width: none; margin: 0; text-align: left; }
+      .gallery-collage { min-height: 360px; }
+      .gallery-collage img:first-child { grid-row: auto; grid-column: 1 / -1; }
+      .gallery-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 1.1fr .8fr; }
+      .service-heading { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .marquee { width: auto; flex-wrap: wrap; transform: none !important; }
+    }
+  
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#home" aria-label="Mulan Beauty Spa home">
+        <img src="https://img.dingliuads.com/file/1788575411714_logo-1787626098.png" alt="">
+        <span>Mulan Beauty Spa</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services & Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button button-light header-book" href="https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services">Book now</a>
+      <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Bensalem, Pennsylvania</p>
+          <h1>Quiet care.<br>Visible renewal.</h1>
+          <p>Head spa rituals, restorative bodywork, complexion care and refined lash services in a calm, private setting.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#services">Explore services</a>
+            <a class="button button-line" style="color:white;border-color:rgba(255,255,255,.48)" href="https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services">Book online</a>
+          </div>
+        </div>
+        <div class="hero-meta" aria-label="Business highlights">
+          <div><strong>4.8</strong><span>Google rating</span></div>
+          <div><strong>188</strong><span>Google reviews</span></div>
+          <div><strong>10:30–8:00</strong><span>Open daily</span></div>
+          <div><strong>Bensalem</strong><span>2704 Street Rd</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="shell about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">A quieter kind of care</p>
+          <h2 class="section-title">Space to exhale.</h2>
+          <p>Mulan Beauty Spa is designed around stillness: clean treatment rooms, soft light, thoughtful privacy and an unhurried rhythm. Every detail supports one purpose—to help you step away from noise and return feeling restored.</p>
+          <p>Our approach brings focused beauty rituals and deep relaxation together in one calm destination, with experiences for scalp health, skin renewal, body tension and everyday polish.</p>
+          <div class="about-note">A private, polished escape made for deep rest and confident renewal.</div>
+        </div>
+        <div class="gallery-collage" aria-label="Inside Mulan Beauty Spa">
+          <img src="https://img.dingliuads.com/file/1788669630288_lQLPKeYIjJLFfG_NBk7NCYqwcgARvhqWSzwKbSYTWyW4AA_2442_1614.png" alt="Calm treatment room at Mulan Beauty Spa">
+          <img src="https://img.dingliuads.com/file/1788669624757_lQLPKHWU2peX1e_NBmTNCIywzxfJqSab7jwKbSYf2lgPAA_2188_1636.png" alt="Bright, clean interior at Mulan Beauty Spa">
+          <img src="https://img.dingliuads.com/file/1788669613236_lQLPJyJMHCreQW_NBljNCYywsG2wrR7HuVgKbSYZDH_KAA_2444_1624.png" alt="Private spa room at Mulan Beauty Spa">
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="shell">
+        <div class="services-head">
+          <div>
+            <p class="eyebrow">Services & pricing</p>
+            <h2 class="section-title">Choose your ritual.</h2>
+          </div>
+          <p>Browse every service, duration and price currently listed by Mulan Beauty Spa. Select a category to compare options, then continue to online booking.</p>
+        </div>
+        <div class="service-tabs-wrap">
+          <div class="service-tabs" id="service-tabs" role="tablist" aria-label="Service categories"></div>
+        </div>
+        <div class="service-stage">
+          <div class="visual-panel" id="visual-panel">
+            <div class="carousel-controls">
+              <button class="carousel-button" id="previous-visual" aria-label="Previous service image">←</button>
+              <button class="carousel-button" id="next-visual" aria-label="Next service image">→</button>
+            </div>
+            <div id="pin-slides"></div>
+            <div class="visual-shade"></div>
+            <div class="visual-caption">
+              <p class="eyebrow" id="visual-kicker"></p>
+              <h3 id="visual-title"></h3>
+              <p id="visual-copy"></p>
+            </div>
+          </div>
+          <div class="price-panel" id="service-panel" role="tabpanel" tabindex="0">
+            <div class="price-heading">
+              <h3 id="category-title"></h3>
+              <span id="category-count"></span>
+            </div>
+            <div class="price-list" id="price-list"></div>
+            <div class="price-actions">
+              <a class="button button-dark" href="https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services">Book this service</a>
+              <a class="button button-line" href="tel:+12157915914">Call 215-791-5914</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="shell reviews-head">
+        <div>
+          <p class="eyebrow">Guest experiences</p>
+          <h2 class="section-title">Loved for the feeling.</h2>
+        </div>
+        <div class="rating-lockup"><strong>4.8 ★</strong><span>188 Google reviews</span></div>
+      </div>
+      <div id="review-marquees"></div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="shell faq-grid">
+        <div class="faq-intro">
+          <p class="eyebrow">Before your visit</p>
+          <h2 class="section-title">Good to know.</h2>
+          <p>Simple answers for a relaxed arrival. For anything specific to your treatment, call us before booking.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="true"><span>How early should I arrive?</span><span>+</span></button>
+            <div class="faq-answer"><div><p>Arrive 10–15 minutes early so you have time to check in, settle and share any preferences before your service begins.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false"><span>Can I get a massage if I have an injury?</span><span>+</span></button>
+            <div class="faq-answer"><div><p>Please consult your medical professional first and tell the spa about any injury, pain, recent procedure or health concern before treatment. Your service may need to be adjusted or rescheduled.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false"><span>What is your cancellation policy?</span><span>+</span></button>
+            <div class="faq-answer"><div><p>Cancellations within 24 hours of your appointment forfeit the $20 deposit.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false"><span>Is there parking available?</span><span>+</span></button>
+            <div class="faq-answer"><div><p>Parking conditions can change. Please call 215-791-5914 before your visit if you would like current parking guidance.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false"><span>How do I book?</span><span>+</span></button>
+            <div class="faq-answer"><div><p>Use the Book Now button to choose a service and appointment time in the Chronos booking system, or call the spa directly.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false"><span>Are gift cards and memberships available?</span><span>+</span></button>
+            <div class="faq-answer"><div><p>Yes. Gift cards are available, and monthly memberships are offered for $99. Contact the spa or visit in person for current details.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="map-wrap">
+        <iframe title="Map showing Mulan Beauty Spa in Bensalem" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Mulan+Beauty+Spa%2C+2704+Street+Rd%2C+Bensalem%2C+PA+19020&output=embed"></iframe>
+      </div>
+      <div class="contact-copy">
+        <p class="eyebrow">Contact & location</p>
+        <h2 class="section-title">Come unwind.</h2>
+        <dl class="contact-list">
+          <div class="contact-row"><dt>Address</dt><dd>2704 Street Rd<br>Bensalem, PA 19020</dd></div>
+          <div class="contact-row"><dt>Phone</dt><dd><a href="tel:+12157915914">215-791-5914</a></dd></div>
+          <div class="contact-row"><dt>Hours</dt><dd>Monday–Sunday<br>10:30 AM–8:00 PM</dd></div>
+        </dl>
+        <div class="hero-actions">
+          <a class="button button-dark" href="https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services">Book online</a>
+          <a class="button button-line" href="https://www.google.com/maps/dir/?api=1&destination=Mulan+Beauty+Spa%2C+2704+Street+Rd%2C+Bensalem%2C+PA+19020">Get directions</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand"><h2>Mulan Beauty Spa</h2><p>Restorative head spa, bodywork and beauty rituals in Bensalem, Pennsylvania.</p></div>
+        <div class="footer-links"><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#faq">FAQs</a><a href="#contact">Contact</a><button class="button button-line" style="color:white;border-color:rgba(255,255,255,.25)" id="reopen-announcement">Offers</button></div>
+      </div>
+      <div class="copyright">© 2026 Mulan Beauty Spa. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="button button-light" href="tel:+12157915914">Call</a>
+    <a class="button button-dark" style="background:var(--wine)" href="https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services">Book now</a>
+  </div>
+
+  <div class="announcement" id="announcement" role="dialog" aria-modal="true" aria-labelledby="announcement-title">
+    <div class="announcement-card">
+      <button class="modal-close" id="close-announcement" aria-label="Close announcement">×</button>
+      <div class="announcement-grid">
+        <div class="announcement-art" aria-hidden="true"></div>
+        <div class="announcement-copy">
+          <p class="eyebrow">A little more to enjoy</p>
+          <h2 id="announcement-title">Gifts & monthly rituals.</h2>
+          <p>Make relaxation part of the plan—for someone you love, or for yourself.</p>
+          <div class="announcement-offers">
+            <div class="offer"><strong>Gift Cards Available</strong><span>A thoughtful gift for family and friends.</span></div>
+            <div class="offer"><strong>$99 Monthly Membership</strong><span>Enjoy exclusive benefits and savings every month.</span></div>
+          </div>
+          <a class="button button-light" href="tel:+12157915914">Contact the spa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bookingUrl = "https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services";
+
+    const siteHeader = document.querySelector(".site-header");
+    function syncHeader() { siteHeader.classList.toggle("scrolled", window.scrollY > 36); }
+    window.addEventListener("scroll", syncHeader, { passive: true });
+    syncHeader();
+    const categories = [
+      {
+        id: "fall",
+        label: "2026 Fall Restore NEW",
+        title: "Fall Restore",
+        kicker: "Seasonal renewal",
+        intro: "Two elevated rituals for scalp balance and luminous skin.",
+        pins: ["https://i.pinimg.com/originals/9f/c3/3a/9fc33a7491615d5845dc1ce88514a8b4.jpg", "https://i.pinimg.com/originals/87/78/05/8778054bab68bc4289d3b541f53bb23b.jpg"],
+        items: [
+          { name: "doTERRA Luxe Scalp Restore", duration: "1 hour", price: "$149.00", desc: "Botanical scalp detoxification, circulation support and deep relaxation." },
+          { name: "Glowskin O+", duration: "1 hour 30 minutes", price: "$189.00", desc: "A three-step facial that exfoliates, infuses and oxygenates." }
+        ]
+      },
+      {
+        id: "head",
+        label: "Head Spa Scalp Treatment",
+        title: "Head Spa",
+        kicker: "Scalp & hair care",
+        intro: "Deep cleansing and tension release, tailored to the scalp.",
+        pins: ["https://i.pinimg.com/originals/9f/c3/3a/9fc33a7491615d5845dc1ce88514a8b4.jpg", "https://i.pinimg.com/originals/0b/87/45/0b87457211b6446f11c3cbe29712933e.jpg"],
+        items: [
+          { name: "* Mulan Signature Head Spa 特色头疗", duration: "1 hour", price: "$85.00", desc: "Deep cleansing, scalp massage, nourishing serum and Chinese herbal care." },
+          { name: "Classic Head Spa基础头疗", duration: "45 minutes", price: "$65.00", desc: "A focused cleanse, exfoliation and nourishing scalp treatment." },
+          { name: "doTERRA Luxe Scalp Restore", duration: "1 hour", price: "$149.00", desc: "A botanical-infused ritual for buildup, irritation and root vitality." },
+          { name: "Dandruff Detoxification 头皮排毒清洁", duration: "1 hour 30 minutes", price: "$139.00", desc: "Deep scalp cleansing and exfoliation to refresh and rebalance." },
+          { name: "Migraine 偏头痛", duration: "1 hour 30 minutes", price: "$139.00", desc: "Scalp, neck and acupressure work with calming essential oils." },
+          { name: "Hair Growth Stimulation 生发", duration: "1 hour 30 minutes", price: "$139.00", desc: "Scalp nourishment and circulation-focused care for stronger-looking hair." }
+        ]
+      },
+      {
+        id: "combos",
+        label: "All Popular Combination",
+        title: "Popular Combinations",
+        kicker: "More time to restore",
+        intro: "Thoughtfully paired services for a fuller head-to-toe reset.",
+        pins: ["https://i.pinimg.com/originals/0b/87/45/0b87457211b6446f11c3cbe29712933e.jpg", "https://i.pinimg.com/originals/62/de/d9/62ded94ca9dffd3ed568b05ebee8dde7.jpg"],
+        items: [
+          { name: "Glowskin O+ (3 in 1 Super Facial) + doTERRA Luxe Scalp Restore", duration: "2 hours 30 minutes", price: "$299.00", desc: "A complete scalp and complexion renewal." },
+          { name: "Ultimate Relaxation Package", duration: "2 hours 50 minutes", price: "$259.00", desc: "60-minute aroma bodywork, Classic Facial and Signature Head Spa." },
+          { name: "Signature Head Spa + 60 Mins Bodywork", duration: "2 hours", price: "$154.00", desc: "Full-body tension relief followed by the signature scalp ritual." },
+          { name: "Signature Head Spa + Classic Facial 特色头疗 + 基础清洁", duration: "2 hours", price: "$165.00", desc: "A calming head spa paired with cleansing, exfoliation and hydration." },
+          { name: "Signature Head spa +Mini Facial 30m洗脸 +特色头疗", duration: "1 hour 30 minutes", price: "$129.00", desc: "A quick complexion refresh paired with the Signature Head Spa." },
+          { name: "60 Mins Bodywork +Classic Facial 60m 按摩 +基础洗脸", duration: "2 hours", price: "$154.00", desc: "Muscle relief and classic skin renewal in one visit." },
+          { name: "30 mins Back Relax +Classic Facial 30m 按摩+基础清洁", duration: "1 hour 30 minutes", price: "$124.00", desc: "Focused back relief followed by a Classic Facial." },
+          { name: "30 mins back Relax +Signature Head Spa 30m 按摩+ 特色头疗", duration: "1 hour 30 minutes", price: "$119.00", desc: "Back and shoulder relief followed by the Signature Head Spa." }
+        ]
+      },
+      {
+        id: "couples",
+        label: "Couple Popular Combination",
+        title: "Couple Experiences",
+        kicker: "Restore together",
+        intro: "Side-by-side rituals designed for shared calm.",
+        pins: ["https://i.pinimg.com/originals/1d/40/86/1d40861464864968aef31fede4a4fd4d.jpg", "https://i.pinimg.com/originals/9f/c3/3a/9fc33a7491615d5845dc1ce88514a8b4.jpg"],
+        items: [
+          { name: "Couple Aromatherapy Bodywork 双人芳香按摩", duration: "1 hour", price: "$189.00", note: "1st Person $94.50 · 2nd Person $94.50", desc: "Aromatherapy bodywork using doTERRA essential oils." },
+          { name: "Couple Signature Head Spa双人特色头疗", duration: "1 hour", price: "$159.00", note: "1st Person $79.50 · 2nd Person $79.50", desc: "A side-by-side Signature Head Spa for two." }
+        ]
+      },
+      {
+        id: "body",
+        label: "Body Relaxation",
+        title: "Body Relaxation",
+        kicker: "Ease & rebalance",
+        intro: "Targeted and full-body work for stress, tension and recovery.",
+        pins: ["https://i.pinimg.com/originals/01/c0/bd/01c0bd61a179771700ab24923894ff35.jpg", "https://i.pinimg.com/originals/1d/40/86/1d40861464864968aef31fede4a4fd4d.jpg"],
+        items: [
+          { name: "30 Mins back Relax 30m背部按摩", duration: "30 minutes", price: "$40.00", desc: "Focused Swedish bodywork for the back, neck and shoulders." },
+          { name: "60 Mins Swedish Bodywork 60m 按摩", duration: "1 hour", price: "$75.00", desc: "Light-to-medium pressure for overall relaxation and tension release." },
+          { name: "60 Mins Deep Tissue Bodywork 60m深度按摩", duration: "1 hour", price: "$85.00", desc: "Firm, focused pressure with a five-minute thermal hot-stone finish." },
+          { name: "Mulan Aromatherapy Bodywork 芳香按摩", duration: "1 hour", price: "$99.00", desc: "Bodywork enhanced with doTERRA essential oils." },
+          { name: "90 Mins Swedish Bodywork 90m 按摩", duration: "1 hour 30 minutes", price: "$110.00", desc: "An extended gentle-flow session for slower, deeper relaxation." },
+          { name: "90 Mins Deep Tissue Bodywork 90m 深度按摩", duration: "1 hour 30 minutes", price: "$125.00", desc: "Extended deep-tissue work for chronic tension and muscle soreness." }
+        ]
+      },
+      {
+        id: "facial",
+        label: "Facial",
+        title: "Facial",
+        kicker: "Complexion renewal",
+        intro: "From a quick refresh to advanced glow and lifting rituals.",
+        pins: ["https://i.pinimg.com/originals/62/de/d9/62ded94ca9dffd3ed568b05ebee8dde7.jpg", "https://i.pinimg.com/originals/87/78/05/8778054bab68bc4289d3b541f53bb23b.jpg"],
+        items: [
+          { name: "Mini Facial No Extraction 简单护肤", duration: "30 minutes", price: "$55.00", desc: "Cleanse, exfoliation, mask and moisturizer for a quick refresh." },
+          { name: "Classic Facial 基础清洁", duration: "1 hour", price: "$89.00", desc: "Cleansing, steam, extraction, massage and a jelly mask." },
+          { name: "Deep Cleaning Oxygen Facial 深层清洁", duration: "1 hour", price: "$119.00", desc: "Deep cleansing with oxygen micro-bubbles, extraction and a jelly mask." },
+          { name: "Collagen, Sensitive Facial 胶原蛋白护肤", duration: "1 hour", price: "$119.00", desc: "Hydration and firmness support for a more supple complexion." },
+          { name: "Acne Treatment Facial 痘痘肌", duration: "1 hour 30 minutes", price: "$159.00", desc: "Gentle, focused care for redness, congestion and acne-prone skin." },
+          { name: "V Line Lifting Facial 面部提升", duration: "1 hour 30 minutes", price: "$159.00", desc: "Lifting techniques for elasticity, puffiness and facial contour." },
+          { name: "Luxury 24k Gold 黄金焕肤", duration: "1 hour 30 minutes", price: "$159.00", desc: "24k gold skincare designed to hydrate and support elasticity." },
+          { name: "Glowskin O+", duration: "1 hour 30 minutes", price: "$189.00", desc: "Three-step exfoliation, infusion and oxygenation with no downtime." }
+        ]
+      },
+      {
+        id: "brows",
+        label: "Eyebrows Services",
+        title: "Eyebrows",
+        kicker: "Shape & definition",
+        intro: "Long-wear definition or a quick, natural-looking tint.",
+        pins: ["https://i.pinimg.com/1200x/a2/8d/cf/a28dcf4d74f1e0cced306b411358f4ab.jpg", "https://i.pinimg.com/originals/8e/61/71/8e61711936faa71959e1ac00370ede2d.jpg"],
+        items: [
+          { name: "Semi Permanent Eyebrow", duration: "2 hours", price: "$500.00", note: "Ombre style or Microblading style · One free touch-up within 3 months", desc: "Semi-permanent brow definition designed to last up to three years." },
+          { name: "Eyebrow Tint", duration: "25 minutes", price: "$45.00", desc: "Long-lasting tint to deepen, define and visually fill the brows." }
+        ]
+      },
+      {
+        id: "lashes",
+        label: "Eyelash Extension Full Set",
+        title: "Eyelash Full Set",
+        kicker: "Polished detail",
+        intro: "From natural definition to high-impact volume.",
+        pins: ["https://i.pinimg.com/1200x/19/c1/b5/19c1b5b3d3dcd598fddcd3c30198aa53.jpg", "https://i.pinimg.com/736x/02/bd/f3/02bdf3dc8f68f4b068c426a3deb7d4a1.jpg"],
+        items: [
+          { name: "Eyelash lift and tint烫睫毛", duration: "40 minutes", price: "$80.00", desc: "Lift and tint for darker, curled natural lashes lasting 6–8 weeks." },
+          { name: "Classic Eyelash Extension自然款", duration: "1 hour 15 minutes", price: "$120.00", desc: "One lightweight extension per natural lash for subtle length." },
+          { name: "Hybrid Eyelash Extension中密款", duration: "1 hour 30 minutes", price: "$140.00", desc: "A balanced mix of classic extensions and soft volume fans." },
+          { name: "Volume Eyelash Extension浓密款", duration: "2 hours", price: "$170.00", desc: "Ultra-light fans for fullness, density and depth." },
+          { name: "Mega Volume Eyelash Extension", duration: "2 hours", price: "$190.00", desc: "Ultra-fine extensions for dramatic, high-density volume." },
+          { name: "Bottom Lash 下睫毛", duration: "10 minutes", price: "$20.00", desc: "Lower-lash definition to balance and open the eyes." }
+        ]
+      },
+      {
+        id: "refill",
+        label: "Eyelash Refill",
+        title: "Eyelash Refill",
+        kicker: "Maintain your set",
+        intro: "Timed refill options for Classic, Hybrid, Volume and Mega Volume lashes.",
+        pins: ["https://i.pinimg.com/1200x/19/c1/b5/19c1b5b3d3dcd598fddcd3c30198aa53.jpg", "https://i.pinimg.com/736x/02/bd/f3/02bdf3dc8f68f4b068c426a3deb7d4a1.jpg"],
+        items: [
+          { name: "Classic Eyelash 2 Weeks Refill", duration: "50 minutes", price: "$70.00", note: "Between 8 to 14 days", desc: "Classic-set maintenance." },
+          { name: "Classic Eyelash 3 Weeks Refill", duration: "1 hour", price: "$85.00", note: "Between 15 to 21 days", desc: "Classic-set maintenance." },
+          { name: "Hybird Eyelash 2 Weeks Refill", duration: "1 hour", price: "$80.00", note: "Between 8 to 14 days", desc: "Hybrid-set maintenance." },
+          { name: "Hybird Eyelash 3 Weeks Refill", duration: "1 hour 15 minutes", price: "$95.00", note: "Between 15 to 21 days", desc: "Hybrid-set maintenance." },
+          { name: "Volume Eyelash 2 Weeks Refill", duration: "1 hour 20 minutes", price: "$100.00", note: "Between 8 to 14 days", desc: "Volume-set maintenance." },
+          { name: "Volume Eyelash 3 Weeks Refill", duration: "1 hour 30 minutes", price: "$120.00", note: "Between 15 to 21 days", desc: "Volume-set maintenance." },
+          { name: "Mega Volume Eyelash 2 Weeks Refill", duration: "1 hour 30 minutes", price: "$120.00", note: "Between 8 to 14 days", desc: "Mega Volume-set maintenance." },
+          { name: "Mega Volume Eyelash 3 Weeks Refill", duration: "1 hour 30 minutes", price: "$140.00", note: "Between 15 to 21 days", desc: "Mega Volume-set maintenance." }
+        ]
+      }
+    ];
+
+    const reviews = [
+      { name: "Diana M", time: "1 month ago", text: "Such a beautiful relaxing experience. From start to finish I felt welcomed and relaxed. My scalp was left super clean. I cannot wait to come back—10/10!" },
+      { name: "Bree White", time: "3 months ago", text: "We booked the Head Spa and Mini Facial for Mother’s Day. The booking was easy and the experience was relaxing from start to finish." },
+      { name: "Cathy W (Cat)", time: "8 months ago", text: "I had been looking forward to trying Mulan Spa, especially because I’m in the area. The bright, comfortable space made a lovely first impression." },
+      { name: "Ly Truong", time: "8 months ago", text: "This beauty spa is truly amazing. From the moment I walked in, the welcome was kind, informative and made check-in smooth and comfortable." },
+      { name: "Michelle Marcove Weiser", time: "1 month ago", text: "Great prices for top-notch service in a clean, beautifully decorated space. The massage, facial and head spa is one of my favorite ways to spend an afternoon." },
+      { name: "Jennifer", time: "3 months ago", text: "My daughter gifted me a Signature Head Spa for Mother’s Day. It completely changed my mind about the head spa experience." },
+      { name: "Husnaa Sharifi", time: "7 months ago", text: "First time at Mulan Spa and wow. The body massage and Signature Head Spa were hands down the best services I’ve had. Monthly visits are officially locked in!" },
+      { name: "Nadia Kamran", time: "4 months ago", text: "It was a birthday gift and I received a wonderful facial. I also tried the massage and felt genuinely cared for throughout the visit." },
+      { name: "Laura F", time: "7 months ago", text: "We did the couples head spa and it was absolutely amazing. The atmosphere was calming, the service attentive and the experience thoughtfully done." },
+      { name: "Donna Thompson", time: "2 months ago", text: "I had a wonderful experience with the Signature Head Spa, 60-minute bodywork and doTERRA essential oil add-on. The care was kind and professional." }
+    ];
+
+    const tabs = document.getElementById("service-tabs");
+    const list = document.getElementById("price-list");
+    const title = document.getElementById("category-title");
+    const count = document.getElementById("category-count");
+    const visualTitle = document.getElementById("visual-title");
+    const visualKicker = document.getElementById("visual-kicker");
+    const visualCopy = document.getElementById("visual-copy");
+    const pinSlides = document.getElementById("pin-slides");
+    let activeCategory = 0;
+    let activeVisual = 0;
+
+    function renderCategory(index, focusPanel) {
+      activeCategory = index;
+      activeVisual = 0;
+      const category = categories[index];
+      Array.from(tabs.children).forEach(function(tab, i) {
+        tab.setAttribute("aria-selected", i === index ? "true" : "false");
+        tab.tabIndex = i === index ? 0 : -1;
+      });
+      title.textContent = category.title;
+      count.textContent = category.items.length + (category.items.length === 1 ? " service" : " services");
+      visualTitle.textContent = category.title;
+      visualKicker.textContent = category.kicker;
+      visualCopy.textContent = category.intro;
+      list.innerHTML = category.items.map(function(item) {
+        return '<article class="price-item"><div><h4>' + item.name + '</h4><p>' + item.desc + '</p><span class="duration">' + item.duration + '</span></div><div class="price">' + item.price + (item.note ? '<span class="price-note">' + item.note + '</span>' : '') + '</div></article>';
+      }).join("");
+      pinSlides.innerHTML = category.pins.map(function(image, i) {
+        return '<div class="pin-slide' + (i === 0 ? ' active' : '') + '"><img loading="lazy" alt="' + category.title + ' visual ' + (i + 1) + '" src="' + image + '"></div>';
+      }).join("");
+      if (focusPanel) document.getElementById("service-panel").focus();
+    }
+
+    categories.forEach(function(category, i) {
+      const button = document.createElement("button");
+      button.className = "service-tab";
+      button.type = "button";
+      button.id = "tab-" + category.id;
+      button.setAttribute("role", "tab");
+      button.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      button.setAttribute("aria-controls", "service-panel");
+      button.tabIndex = i === 0 ? 0 : -1;
+      button.textContent = category.label;
+      button.addEventListener("click", function() { renderCategory(i, false); });
+      button.addEventListener("keydown", function(event) {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        event.preventDefault();
+        const next = event.key === "ArrowRight" ? (i + 1) % categories.length : (i - 1 + categories.length) % categories.length;
+        renderCategory(next, false);
+        tabs.children[next].focus();
+      });
+      tabs.appendChild(button);
+    });
+
+    function moveVisual(direction) {
+      const slides = Array.from(document.querySelectorAll(".pin-slide"));
+      if (!slides.length) return;
+      slides[activeVisual].classList.remove("active");
+      activeVisual = (activeVisual + direction + slides.length) % slides.length;
+      slides[activeVisual].classList.add("active");
+    }
+    document.getElementById("previous-visual").addEventListener("click", function() { moveVisual(-1); });
+    document.getElementById("next-visual").addEventListener("click", function() { moveVisual(1); });
+    renderCategory(0, false);
+
+    const marqueeHost = document.getElementById("review-marquees");
+    [reviews.slice(0, 5), reviews.slice(5)].forEach(function(row, rowIndex) {
+      const track = document.createElement("div");
+      track.className = "marquee" + (rowIndex ? " reverse" : "");
+      const doubled = row.concat(row);
+      track.innerHTML = doubled.map(function(review) {
+        return '<article class="review-card"><div><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“' + review.text + '”</blockquote></div><footer><strong>' + review.name + '</strong><span>' + review.time + '</span></footer></article>';
+      }).join("");
+      marqueeHost.appendChild(track);
+    });
+
+    document.querySelectorAll(".faq-question").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", expanded ? "false" : "true");
+      });
+    });
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.getElementById("site-nav");
+    menuToggle.addEventListener("click", function() {
+      const open = nav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menuToggle.textContent = open ? "×" : "☰";
+    });
+    nav.querySelectorAll("a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        nav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    const announcement = document.getElementById("announcement");
+    const closeAnnouncement = document.getElementById("close-announcement");
+    const reopenAnnouncement = document.getElementById("reopen-announcement");
+    let lastFocused = null;
+    function openAnnouncement() {
+      lastFocused = document.activeElement;
+      announcement.hidden = false;
+      document.body.classList.add("locked");
+      closeAnnouncement.focus();
+    }
+    function hideAnnouncement() {
+      announcement.hidden = true;
+      document.body.classList.remove("locked");
+      sessionStorage.setItem("mulan-offers-seen", "true");
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+    closeAnnouncement.addEventListener("click", hideAnnouncement);
+    reopenAnnouncement.addEventListener("click", openAnnouncement);
+    announcement.addEventListener("click", function(event) { if (event.target === announcement) hideAnnouncement(); });
+    document.addEventListener("keydown", function(event) { if (event.key === "Escape" && !announcement.hidden) hideAnnouncement(); });
+    if (sessionStorage.getItem("mulan-offers-seen") === "true") announcement.hidden = true;
+    else document.body.classList.add("locked");
+  </script>
+</body>
+</html>
