@@ -111,26 +111,49 @@
       backdrop-filter: blur(16px);
     }
     .header-inner {
-      min-height: 84px;
+      min-height: 96px;
+      position: relative;
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 34px;
       transition: min-height .3s ease;
     }
-    .site-header.scrolled .header-inner { min-height: 72px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 128px; }
+    .site-header.scrolled .header-inner { min-height: 82px; }
+
+    /* Enlarged logo, optically centered in the header on every screen size. */
+    .brand {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      transform: translate(-35%, -50%);
+    }
     .brand img {
       width: auto;
-      max-width: 152px;
-      height: 48px;
+      max-width: 440px;
+      height: 140px;
       object-fit: contain;
       filter: brightness(0) invert(1);
-      transition: filter .3s ease;
+      transition: filter .3s ease, height .3s ease, max-width .3s ease;
     }
-    .site-header.scrolled .brand img { filter: none; }
+    .site-header.scrolled .brand img {
+      max-width: 396px;
+      height: 124px;
+      filter: none;
+    }
     .brand span { display: none; }
-    .nav { display: flex; justify-content: center; gap: clamp(18px, 2.8vw, 38px); }
+    .nav {
+      grid-column: 1;
+      justify-self: start;
+      display: flex;
+      justify-content: flex-start;
+      gap: clamp(15px, 1.65vw, 25px);
+    }
     .nav a {
       position: relative;
       font-size: .68rem;
@@ -151,7 +174,12 @@
       transition: transform .25s var(--ease);
     }
     .nav a:hover::after { transform: scaleX(1); transform-origin: left; }
-    .site-header .header-book { color: var(--ink); background: #fff; }
+    .site-header .header-book {
+      grid-column: 3;
+      justify-self: end;
+      color: var(--ink);
+      background: #fff;
+    }
     .site-header.scrolled .header-book { color: #fff; background: var(--pine-deep); }
     .menu-toggle {
       display: none;
@@ -566,8 +594,14 @@
       .nav.open { display: flex; }
       .nav a { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; letter-spacing: -.01em; text-transform: none; }
       .nav a::after { display: none; }
-      .menu-toggle { display: block; }
-      .header-inner { grid-template-columns: 1fr auto auto; }
+      .menu-toggle {
+        grid-column: 3;
+        justify-self: end;
+        display: block;
+      }
+      .header-inner { grid-template-columns: 1fr auto 1fr; }
+      .brand img { max-width: 376px; height: 124px; }
+      .site-header.scrolled .brand img { max-width: 352px; height: 112px; }
       .header-book { display: none; }
       .hero-meta { grid-template-columns: repeat(2,1fr); }
       .about-grid, .faq-grid { grid-template-columns: 1fr; }
@@ -584,10 +618,11 @@
     @media (max-width: 680px) {
       html { scroll-padding-top: 76px; }
       .shell { width: min(calc(100% - 34px),var(--max)); }
-      .header-inner, .site-header.scrolled .header-inner { min-height: 70px; }
+      .header-inner, .site-header.scrolled .header-inner { min-height: 78px; }
       .brand { min-width: 0; }
-      .brand img { max-width: 118px; height: 42px; }
-      .nav { top: 70px; }
+      .brand img { max-width: 316px; height: 116px; }
+      .site-header.scrolled .brand img { max-width: 300px; height: 108px; }
+      .nav { top: 78px; }
 
       .hero { min-height: 790px; background-position: 61% center; }
       .hero-inner { padding: 130px 0 42px; }
