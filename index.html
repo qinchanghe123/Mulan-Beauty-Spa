@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mulan Beauty Spa | Head Spa, Facial & Bodywork in Bensalem</title>
   <meta name="description" content="Mulan Beauty Spa in Bensalem, PA. Explore head spa, bodywork, facial, brow and eyelash services, then book online.">
-  <meta name="theme-color" content="#f3f0e9">
+  <meta name="theme-color" content="#ebe2d4">
   <style>
 
     :root {
@@ -14,9 +14,9 @@
       --pine: #2d382f;
       --pine-deep: #202821;
       --pine-soft: #435147;
-      --ivory: #f3f0e9;
-      --paper: #faf8f3;
-      --oat: #e7e1d7;
+      --ivory: #ebe2d4;
+      --paper: #f4eee5;
+      --oat: #ddd0bd;
       --bronze: #9d7e5d;
       --bronze-soft: #cbb9a3;
       --wine: #6f3d45;
@@ -88,8 +88,8 @@
     .button:hover { transform: translateY(-2px); }
     .button-dark { color: white; background: var(--pine-deep); }
     .button-dark:hover { background: #111813; }
-    .button-light { color: var(--ink); background: rgba(255,255,255,.94); }
-    .button-light:hover { background: #fff; }
+    .button-light { color: var(--ink); background: var(--paper); }
+    .button-light:hover { background: #f8f3ec; }
     .button-line { color: var(--ink); border-color: rgba(32,34,29,.25); background: transparent; }
     .button-line:hover { border-color: rgba(32,34,29,.52); }
 
@@ -106,7 +106,7 @@
     .site-header.scrolled {
       color: var(--ink);
       border-color: var(--line);
-      background: rgba(243,240,233,.94);
+      background: rgba(235,226,212,.95);
       box-shadow: 0 1px 0 rgba(32,34,29,.03);
       backdrop-filter: blur(16px);
     }
@@ -178,7 +178,7 @@
       grid-column: 3;
       justify-self: end;
       color: var(--ink);
-      background: #fff;
+      background: var(--paper);
     }
     .site-header.scrolled .header-book { color: #fff; background: var(--pine-deep); }
     .menu-toggle {
@@ -534,7 +534,7 @@
       position: relative;
       overflow: visible;
       color: var(--ink);
-      background: #faf7f2;
+      background: #f1e7da;
       box-shadow: 0 30px 90px rgba(16,17,15,.25);
     }
     .announcement-grid { display: grid; grid-template-columns: .78fr 1.22fr; min-height: 410px; }
@@ -561,12 +561,12 @@
       border: 1px solid #9d969f;
       border-radius: 50%;
       color: #807a84;
-      background: #faf7f2;
+      background: #f1e7da;
       cursor: pointer;
       font-size: 1.35rem;
       transition: transform .2s ease, background .2s ease;
     }
-    .modal-close:hover { transform: rotate(5deg); background: #fff; }
+    .modal-close:hover { transform: rotate(5deg); background: #f8f2e9; }
 
     @media (max-width: 1100px) {
       .shell { width: min(calc(100% - 48px),var(--max)); }
@@ -588,7 +588,7 @@
         gap: 20px;
         color: var(--ink);
         border: 1px solid var(--line);
-        background: rgba(243,240,233,.98);
+        background: rgba(235,226,212,.98);
         box-shadow: var(--shadow);
       }
       .nav.open { display: flex; }
@@ -951,12 +951,12 @@
         intro: "Deep cleansing and tension release, tailored to the scalp.",
         pins: ["https://i.pinimg.com/originals/9f/c3/3a/9fc33a7491615d5845dc1ce88514a8b4.jpg", "https://i.pinimg.com/originals/0b/87/45/0b87457211b6446f11c3cbe29712933e.jpg"],
         items: [
-          { name: "* Mulan Signature Head Spa 特色头疗", duration: "1 hour", price: "$85.00", desc: "Deep cleansing, scalp massage, nourishing serum and Chinese herbal care." },
-          { name: "Classic Head Spa基础头疗", duration: "45 minutes", price: "$65.00", desc: "A focused cleanse, exfoliation and nourishing scalp treatment." },
+          { name: "* Mulan Signature Head Spa — Signature Head Spa", duration: "1 hour", price: "$85.00", desc: "Deep cleansing, scalp massage, nourishing serum and Chinese herbal care." },
+          { name: "Classic Head Spa — Classic Scalp Care", duration: "45 minutes", price: "$65.00", desc: "A focused cleanse, exfoliation and nourishing scalp treatment." },
           { name: "doTERRA Luxe Scalp Restore", duration: "1 hour", price: "$149.00", desc: "A botanical-infused ritual for buildup, irritation and root vitality." },
-          { name: "Dandruff Detoxification 头皮排毒清洁", duration: "1 hour 30 minutes", price: "$139.00", desc: "Deep scalp cleansing and exfoliation to refresh and rebalance." },
-          { name: "Migraine 偏头痛", duration: "1 hour 30 minutes", price: "$139.00", desc: "Scalp, neck and acupressure work with calming essential oils." },
-          { name: "Hair Growth Stimulation 生发", duration: "1 hour 30 minutes", price: "$139.00", desc: "Scalp nourishment and circulation-focused care for stronger-looking hair." }
+          { name: "Dandruff Detoxification — Scalp Detox Cleansing", duration: "1 hour 30 minutes", price: "$139.00", desc: "Deep scalp cleansing and exfoliation to refresh and rebalance." },
+          { name: "Migraine — Headache Relief Ritual", duration: "1 hour 30 minutes", price: "$139.00", desc: "Scalp, neck and acupressure work with calming essential oils." },
+          { name: "Hair Growth Stimulation — Scalp Revitalizing Care", duration: "1 hour 30 minutes", price: "$139.00", desc: "Scalp nourishment and circulation-focused care for stronger-looking hair." }
         ]
       },
       {
@@ -970,11 +970,11 @@
           { name: "Glowskin O+ (3 in 1 Super Facial) + doTERRA Luxe Scalp Restore", duration: "2 hours 30 minutes", price: "$299.00", desc: "A complete scalp and complexion renewal." },
           { name: "Ultimate Relaxation Package", duration: "2 hours 50 minutes", price: "$259.00", desc: "60-minute aroma bodywork, Classic Facial and Signature Head Spa." },
           { name: "Signature Head Spa + 60 Mins Bodywork", duration: "2 hours", price: "$154.00", desc: "Full-body tension relief followed by the signature scalp ritual." },
-          { name: "Signature Head Spa + Classic Facial 特色头疗 + 基础清洁", duration: "2 hours", price: "$165.00", desc: "A calming head spa paired with cleansing, exfoliation and hydration." },
-          { name: "Signature Head spa +Mini Facial 30m洗脸 +特色头疗", duration: "1 hour 30 minutes", price: "$129.00", desc: "A quick complexion refresh paired with the Signature Head Spa." },
-          { name: "60 Mins Bodywork +Classic Facial 60m 按摩 +基础洗脸", duration: "2 hours", price: "$154.00", desc: "Muscle relief and classic skin renewal in one visit." },
-          { name: "30 mins Back Relax +Classic Facial 30m 按摩+基础清洁", duration: "1 hour 30 minutes", price: "$124.00", desc: "Focused back relief followed by a Classic Facial." },
-          { name: "30 mins back Relax +Signature Head Spa 30m 按摩+ 特色头疗", duration: "1 hour 30 minutes", price: "$119.00", desc: "Back and shoulder relief followed by the Signature Head Spa." }
+          { name: "Signature Head Spa + Classic Facial — Signature Scalp Care + Classic Facial", duration: "2 hours", price: "$165.00", desc: "A calming head spa paired with cleansing, exfoliation and hydration." },
+          { name: "Signature Head Spa + Mini Facial — 30 Min Facial + Signature Head Spa", duration: "1 hour 30 minutes", price: "$129.00", desc: "A quick complexion refresh paired with the Signature Head Spa." },
+          { name: "60 Mins Bodywork + Classic Facial — 60 Min Bodywork + Classic Facial", duration: "2 hours", price: "$154.00", desc: "Muscle relief and classic skin renewal in one visit." },
+          { name: "30 Mins Back Relax + Classic Facial — 30 Min Back Bodywork + Classic Facial", duration: "1 hour 30 minutes", price: "$124.00", desc: "Focused back relief followed by a Classic Facial." },
+          { name: "30 Mins Back Relax + Signature Head Spa — 30 Min Back Bodywork + Signature Head Spa", duration: "1 hour 30 minutes", price: "$119.00", desc: "Back and shoulder relief followed by the Signature Head Spa." }
         ]
       },
       {
@@ -985,8 +985,8 @@
         intro: "Side-by-side rituals designed for shared calm.",
         pins: ["https://i.pinimg.com/originals/1d/40/86/1d40861464864968aef31fede4a4fd4d.jpg", "https://i.pinimg.com/originals/9f/c3/3a/9fc33a7491615d5845dc1ce88514a8b4.jpg"],
         items: [
-          { name: "Couple Aromatherapy Bodywork 双人芳香按摩", duration: "1 hour", price: "$189.00", note: "1st Person $94.50 · 2nd Person $94.50", desc: "Aromatherapy bodywork using doTERRA essential oils." },
-          { name: "Couple Signature Head Spa双人特色头疗", duration: "1 hour", price: "$159.00", note: "1st Person $79.50 · 2nd Person $79.50", desc: "A side-by-side Signature Head Spa for two." }
+          { name: "Couple Aromatherapy Bodywork — Couples Aromatherapy Massage", duration: "1 hour", price: "$189.00", note: "1st Person $94.50 · 2nd Person $94.50", desc: "Aromatherapy bodywork using doTERRA essential oils." },
+          { name: "Couple Signature Head Spa — Couples Signature Head Spa", duration: "1 hour", price: "$159.00", note: "1st Person $79.50 · 2nd Person $79.50", desc: "A side-by-side Signature Head Spa for two." }
         ]
       },
       {
@@ -997,12 +997,12 @@
         intro: "Targeted and full-body work for stress, tension and recovery.",
         pins: ["https://i.pinimg.com/originals/01/c0/bd/01c0bd61a179771700ab24923894ff35.jpg", "https://i.pinimg.com/originals/1d/40/86/1d40861464864968aef31fede4a4fd4d.jpg"],
         items: [
-          { name: "30 Mins back Relax 30m背部按摩", duration: "30 minutes", price: "$40.00", desc: "Focused Swedish bodywork for the back, neck and shoulders." },
-          { name: "60 Mins Swedish Bodywork 60m 按摩", duration: "1 hour", price: "$75.00", desc: "Light-to-medium pressure for overall relaxation and tension release." },
-          { name: "60 Mins Deep Tissue Bodywork 60m深度按摩", duration: "1 hour", price: "$85.00", desc: "Firm, focused pressure with a five-minute thermal hot-stone finish." },
-          { name: "Mulan Aromatherapy Bodywork 芳香按摩", duration: "1 hour", price: "$99.00", desc: "Bodywork enhanced with doTERRA essential oils." },
-          { name: "90 Mins Swedish Bodywork 90m 按摩", duration: "1 hour 30 minutes", price: "$110.00", desc: "An extended gentle-flow session for slower, deeper relaxation." },
-          { name: "90 Mins Deep Tissue Bodywork 90m 深度按摩", duration: "1 hour 30 minutes", price: "$125.00", desc: "Extended deep-tissue work for chronic tension and muscle soreness." }
+          { name: "30 Mins Back Relax — 30 Min Back Bodywork", duration: "30 minutes", price: "$40.00", desc: "Focused Swedish bodywork for the back, neck and shoulders." },
+          { name: "60 Mins Swedish Bodywork — 60 Min Swedish Massage", duration: "1 hour", price: "$75.00", desc: "Light-to-medium pressure for overall relaxation and tension release." },
+          { name: "60 Mins Deep Tissue Bodywork — 60 Min Deep Tissue Massage", duration: "1 hour", price: "$85.00", desc: "Firm, focused pressure with a five-minute thermal hot-stone finish." },
+          { name: "Mulan Aromatherapy Bodywork — Aromatherapy Massage", duration: "1 hour", price: "$99.00", desc: "Bodywork enhanced with doTERRA essential oils." },
+          { name: "90 Mins Swedish Bodywork — 90 Min Swedish Massage", duration: "1 hour 30 minutes", price: "$110.00", desc: "An extended gentle-flow session for slower, deeper relaxation." },
+          { name: "90 Mins Deep Tissue Bodywork — 90 Min Deep Tissue Massage", duration: "1 hour 30 minutes", price: "$125.00", desc: "Extended deep-tissue work for chronic tension and muscle soreness." }
         ]
       },
       {
@@ -1013,13 +1013,13 @@
         intro: "From a quick refresh to advanced glow and lifting rituals.",
         pins: ["https://i.pinimg.com/originals/62/de/d9/62ded94ca9dffd3ed568b05ebee8dde7.jpg", "https://i.pinimg.com/originals/87/78/05/8778054bab68bc4289d3b541f53bb23b.jpg"],
         items: [
-          { name: "Mini Facial No Extraction 简单护肤", duration: "30 minutes", price: "$55.00", desc: "Cleanse, exfoliation, mask and moisturizer for a quick refresh." },
-          { name: "Classic Facial 基础清洁", duration: "1 hour", price: "$89.00", desc: "Cleansing, steam, extraction, massage and a jelly mask." },
-          { name: "Deep Cleaning Oxygen Facial 深层清洁", duration: "1 hour", price: "$119.00", desc: "Deep cleansing with oxygen micro-bubbles, extraction and a jelly mask." },
-          { name: "Collagen, Sensitive Facial 胶原蛋白护肤", duration: "1 hour", price: "$119.00", desc: "Hydration and firmness support for a more supple complexion." },
-          { name: "Acne Treatment Facial 痘痘肌", duration: "1 hour 30 minutes", price: "$159.00", desc: "Gentle, focused care for redness, congestion and acne-prone skin." },
-          { name: "V Line Lifting Facial 面部提升", duration: "1 hour 30 minutes", price: "$159.00", desc: "Lifting techniques for elasticity, puffiness and facial contour." },
-          { name: "Luxury 24k Gold 黄金焕肤", duration: "1 hour 30 minutes", price: "$159.00", desc: "24k gold skincare designed to hydrate and support elasticity." },
+          { name: "Mini Facial No Extraction — Express Skincare", duration: "30 minutes", price: "$55.00", desc: "Cleanse, exfoliation, mask and moisturizer for a quick refresh." },
+          { name: "Classic Facial — Classic Cleansing Facial", duration: "1 hour", price: "$89.00", desc: "Cleansing, steam, extraction, massage and a jelly mask." },
+          { name: "Deep Cleaning Oxygen Facial — Deep Cleansing Care", duration: "1 hour", price: "$119.00", desc: "Deep cleansing with oxygen micro-bubbles, extraction and a jelly mask." },
+          { name: "Collagen, Sensitive Facial — Collagen Skincare", duration: "1 hour", price: "$119.00", desc: "Hydration and firmness support for a more supple complexion." },
+          { name: "Acne Treatment Facial — Acne-Prone Skin Care", duration: "1 hour 30 minutes", price: "$159.00", desc: "Gentle, focused care for redness, congestion and acne-prone skin." },
+          { name: "V Line Lifting Facial — Facial Lifting Care", duration: "1 hour 30 minutes", price: "$159.00", desc: "Lifting techniques for elasticity, puffiness and facial contour." },
+          { name: "Luxury 24K Gold — Gold Renewal Facial", duration: "1 hour 30 minutes", price: "$159.00", desc: "24k gold skincare designed to hydrate and support elasticity." },
           { name: "Glowskin O+", duration: "1 hour 30 minutes", price: "$189.00", desc: "Three-step exfoliation, infusion and oxygenation with no downtime." }
         ]
       },
@@ -1043,12 +1043,12 @@
         intro: "From natural definition to high-impact volume.",
         pins: ["https://i.pinimg.com/1200x/19/c1/b5/19c1b5b3d3dcd598fddcd3c30198aa53.jpg", "https://i.pinimg.com/736x/02/bd/f3/02bdf3dc8f68f4b068c426a3deb7d4a1.jpg"],
         items: [
-          { name: "Eyelash lift and tint烫睫毛", duration: "40 minutes", price: "$80.00", desc: "Lift and tint for darker, curled natural lashes lasting 6–8 weeks." },
-          { name: "Classic Eyelash Extension自然款", duration: "1 hour 15 minutes", price: "$120.00", desc: "One lightweight extension per natural lash for subtle length." },
-          { name: "Hybrid Eyelash Extension中密款", duration: "1 hour 30 minutes", price: "$140.00", desc: "A balanced mix of classic extensions and soft volume fans." },
-          { name: "Volume Eyelash Extension浓密款", duration: "2 hours", price: "$170.00", desc: "Ultra-light fans for fullness, density and depth." },
+          { name: "Eyelash Lift and Tint — Lash Lift & Tint", duration: "40 minutes", price: "$80.00", desc: "Lift and tint for darker, curled natural lashes lasting 6–8 weeks." },
+          { name: "Classic Eyelash Extension — Natural Style", duration: "1 hour 15 minutes", price: "$120.00", desc: "One lightweight extension per natural lash for subtle length." },
+          { name: "Hybrid Eyelash Extension — Medium Density", duration: "1 hour 30 minutes", price: "$140.00", desc: "A balanced mix of classic extensions and soft volume fans." },
+          { name: "Volume Eyelash Extension — Full Volume", duration: "2 hours", price: "$170.00", desc: "Ultra-light fans for fullness, density and depth." },
           { name: "Mega Volume Eyelash Extension", duration: "2 hours", price: "$190.00", desc: "Ultra-fine extensions for dramatic, high-density volume." },
-          { name: "Bottom Lash 下睫毛", duration: "10 minutes", price: "$20.00", desc: "Lower-lash definition to balance and open the eyes." }
+          { name: "Bottom Lash — Lower Lash Extension", duration: "10 minutes", price: "$20.00", desc: "Lower-lash definition to balance and open the eyes." }
         ]
       },
       {
