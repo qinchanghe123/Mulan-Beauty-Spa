@@ -229,7 +229,7 @@
     .hero-meta {
       margin-top: 62px;
       display: grid;
-      grid-template-columns: repeat(5, minmax(0,1fr));
+      grid-template-columns: repeat(4, minmax(0,1fr));
       border-top: 1px solid rgba(255,255,255,.28);
     }
     .hero-meta div { min-width: 0; padding: 20px 22px 0 0; }
@@ -249,6 +249,10 @@
       line-height: 1.55;
       text-transform: uppercase;
     }
+    .hero-meta .hero-google-meta a { display: block; }
+    .hero-meta .hero-google-meta strong { color: #f1dfc8; }
+    .hero-meta .hero-google-meta:hover strong { color: #fff; }
+    .hero-meta .hero-google-meta span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .hero-meta .coming-soon-meta {
       padding-left: 22px;
       border-left: 1px solid rgba(255,255,255,.27);
@@ -369,36 +373,160 @@
     .price { font-family: var(--serif); font-size: 1.5rem; line-height: 1.25; white-space: nowrap; }
     .price-note { display: block; margin-top: 5px; color: var(--muted); font-family: var(--sans); font-size: .68rem; line-height: 1.45; text-align: right; }
     .price-actions { padding-top: 30px; display: flex; flex-wrap: wrap; gap: 11px; }
-
-    /* Reviews */
-    .reviews { padding: 136px 0; overflow: hidden; background: var(--ivory); }
-    .reviews-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 52px; }
-    .rating-lockup { text-align: right; }
-    .rating-lockup strong { display: block; font-family: var(--serif); font-size: 2.7rem; font-weight: 400; line-height: 1; }
-    .rating-lockup span { color: var(--muted); font-size: .76rem; }
-    #review-marquees { position: relative; }
-    #review-marquees::before, #review-marquees::after {
-      content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; width: min(9vw,130px); pointer-events: none;
+    /* Reviews — direct Google Maps business iframe */
+    .reviews {
+      padding: 136px 0;
+      background: var(--ivory);
     }
-    #review-marquees::before { left: 0; background: linear-gradient(to right,var(--ivory),transparent); }
-    #review-marquees::after { right: 0; background: linear-gradient(to left,var(--ivory),transparent); }
-    .marquee { display: flex; width: max-content; gap: 14px; margin-bottom: 14px; animation: drift 50s linear infinite; }
-    .marquee.reverse { animation-direction: reverse; animation-duration: 56s; transform: translateX(-10%); }
-    .marquee:hover { animation-play-state: paused; }
-    .review-card {
-      width: min(390px,calc(100vw - 44px));
-      min-height: 236px;
+    .reviews-head {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      align-items: end;
+      gap: 42px;
+      margin-bottom: 42px;
+    }
+    .reviews-head-copy { max-width: 760px; }
+    .reviews-head-copy > p:last-child {
+      max-width: 660px;
+      margin: 22px 0 0;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+    .google-review-link {
+      min-width: 245px;
+      display: block;
+      padding: 21px 24px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      transition: transform .25s var(--ease), border-color .25s ease, background .25s ease;
+    }
+    .google-review-link:hover {
+      transform: translateY(-3px);
+      border-color: rgba(32,34,29,.3);
+      background: #f8f2e9;
+    }
+    .google-review-link .google-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--bronze);
+      font-size: .68rem;
+      font-weight: 760;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .google-review-link strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    .google-review-link small {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+    .google-business-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 22px 60px rgba(36,30,24,.08);
+    }
+    .google-business-frame iframe {
+      width: 100%;
+      height: 650px;
+      display: block;
+      border: 0;
+      background: #ddd4c6;
+    }
+    .google-business-note {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      padding: 29px 30px;
+      align-items: center;
+      gap: 22px;
+      padding: 18px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--paper);
+      font-size: .74rem;
+      line-height: 1.6;
+    }
+    .google-business-note a {
+      flex: 0 0 auto;
+      color: var(--bronze);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+
+
+
+
+
+    /* Reviews — SociableKIT Google Reviews widget */
+    .reviews {
+      padding: 136px 0;
+      background: var(--ivory);
+      overflow: hidden;
+    }
+    .reviews-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 42px;
+      margin-bottom: 42px;
+    }
+    .reviews-head-copy { max-width: 760px; }
+    .reviews-head-copy > p:last-child {
+      max-width: 660px;
+      margin: 22px 0 0;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+    .reviews-badge {
+      min-width: 220px;
+      padding: 20px 22px;
       border: 1px solid var(--line);
       background: var(--paper);
     }
-    .stars { color: var(--bronze); font-size: .78rem; letter-spacing: .16em; }
-    .review-card blockquote { margin: 24px 0; font-family: var(--serif); font-size: 1.22rem; line-height: 1.48; }
-    .review-card footer { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: .74rem; }
-    @keyframes drift { to { transform: translateX(-50%); } }
+    .reviews-badge span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--bronze);
+      font-size: .67rem;
+      font-weight: 760;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .reviews-badge strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    .reviews-widget-shell {
+      padding: clamp(18px, 2.5vw, 34px);
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 22px 60px rgba(36, 30, 24, .08);
+    }
+    .sk-ww-google-reviews {
+      width: 100%;
+      min-height: 260px;
+    }
+    @media (max-width: 680px) {
+      .reviews-head { display: block; }
+      .reviews-badge { margin-top: 26px; min-width: 0; }
+      .reviews-widget-shell {
+        margin-inline: -17px;
+        padding: 16px;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+
 
     /* FAQ */
     .faq { padding: 136px 0; background: var(--oat); }
@@ -555,9 +683,6 @@
       .price-item p { grid-column: 1 / -1; }
       .price-actions { display: grid; grid-template-columns: 1fr; }
       .price-actions .button { width: 100%; }
-      .rating-lockup { margin-top: 23px; text-align: left; }
-      .review-card { width: min(310px,calc(100vw - 38px)); min-height: 218px; padding: 24px; }
-      #review-marquees::before, #review-marquees::after { width: 28px; }
       .faq-question { min-height: 76px; font-size: 1.19rem; }
       .contact-copy { padding: 78px 24px; }
       .contact-row { grid-template-columns: 1fr; gap: 5px; }
@@ -590,7 +715,6 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-      .marquee { width: auto; flex-wrap: wrap; transform: none !important; }
     }
 
   </style>
@@ -627,8 +751,7 @@
           </div>
         </div>
         <div class="hero-meta" aria-label="Business highlights">
-          <div><strong>4.8</strong><span>Google rating</span></div>
-          <div><strong>188</strong><span>Google reviews</span></div>
+          <div class="hero-google-meta"><a href="https://www.google.com/maps/place/Mulan+Beauty+Spa/@40.1093444,-74.9521879,16z/data=!4m16!1m9!3m8!1s0x89c14d871c748077:0x86ddab3f6fb98399!2sMulan+Beauty+Spa!8m2!3d40.1094593!4d-74.9533681!9m1!1b1!16s%2Fg%2F11lw37v62x!3m5!1s0x89c14d871c748077:0x86ddab3f6fb98399!8m2!3d40.1094593!4d-74.9533681!16s%2Fg%2F11lw37v62x" target="_blank" rel="noopener noreferrer"><strong>Google Reviews</strong><span>View current rating &amp; reviews ↗</span></a></div>
           <div><strong>10:30–8:00</strong><span>Open daily</span></div>
           <div><strong>Bensalem</strong><span>2704 Street Rd</span></div>
           <div class="coming-soon-meta"><strong>Coming Soon</strong><span>23 N York Rd · Hatboro, PA 19040</span></div>
@@ -696,13 +819,22 @@
 
     <section class="reviews" id="reviews">
       <div class="shell reviews-head">
-        <div>
-          <p class="eyebrow">Guest experiences</p>
+        <div class="reviews-head-copy">
+          <p class="eyebrow">Google reviews</p>
           <h2 class="section-title">Loved for the feeling.</h2>
+          <p>Read recent guest experiences and Google reviews for Mulan Beauty Spa.</p>
         </div>
-        <div class="rating-lockup"><strong>4.8 ★</strong><span>188 Google reviews</span></div>
+        <div class="reviews-badge" aria-label="Google reviews">
+          <span>Guest experiences</span>
+          <strong>Google Reviews</strong>
+        </div>
       </div>
-      <div id="review-marquees"></div>
+
+      <div class="shell">
+        <div class="reviews-widget-shell">
+          <div class="sk-ww-google-reviews" data-embed-id="25718680"></div>
+        </div>
+      </div>
     </section>
 
     <section class="faq" id="faq">
@@ -795,8 +927,7 @@
       </div>
     </div>
   </div>
-
-  <script>
+<script>
     const bookingUrl = "https://go.bychronos.com/l/andalusia-19020-mulan-beauty-spa-807114/a/services";
 
     const siteHeader = document.querySelector(".site-header");
@@ -944,19 +1075,6 @@
       }
     ];
 
-    const reviews = [
-      { name: "Diana M", time: "1 month ago", text: "Such a beautiful relaxing experience. From start to finish I felt welcomed and relaxed. My scalp was left super clean. I cannot wait to come back—10/10!" },
-      { name: "Bree White", time: "3 months ago", text: "We booked the Head Spa and Mini Facial for Mother’s Day. The booking was easy and the experience was relaxing from start to finish." },
-      { name: "Cathy W (Cat)", time: "8 months ago", text: "I had been looking forward to trying Mulan Spa, especially because I’m in the area. The bright, comfortable space made a lovely first impression." },
-      { name: "Ly Truong", time: "8 months ago", text: "This beauty spa is truly amazing. From the moment I walked in, the welcome was kind, informative and made check-in smooth and comfortable." },
-      { name: "Michelle Marcove Weiser", time: "1 month ago", text: "Great prices for top-notch service in a clean, beautifully decorated space. The massage, facial and head spa is one of my favorite ways to spend an afternoon." },
-      { name: "Jennifer", time: "3 months ago", text: "My daughter gifted me a Signature Head Spa for Mother’s Day. It completely changed my mind about the head spa experience." },
-      { name: "Husnaa Sharifi", time: "7 months ago", text: "First time at Mulan Spa and wow. The body massage and Signature Head Spa were hands down the best services I’ve had. Monthly visits are officially locked in!" },
-      { name: "Nadia Kamran", time: "4 months ago", text: "It was a birthday gift and I received a wonderful facial. I also tried the massage and felt genuinely cared for throughout the visit." },
-      { name: "Laura F", time: "7 months ago", text: "We did the couples head spa and it was absolutely amazing. The atmosphere was calming, the service attentive and the experience thoughtfully done." },
-      { name: "Donna Thompson", time: "2 months ago", text: "I had a wonderful experience with the Signature Head Spa, 60-minute bodywork and doTERRA essential oil add-on. The care was kind and professional." }
-    ];
-
     const tabs = document.getElementById("service-tabs");
     const list = document.getElementById("price-list");
     const title = document.getElementById("category-title");
@@ -1022,17 +1140,6 @@
     document.getElementById("next-visual").addEventListener("click", function() { moveVisual(1); });
     renderCategory(0, false);
 
-    const marqueeHost = document.getElementById("review-marquees");
-    [reviews.slice(0, 5), reviews.slice(5)].forEach(function(row, rowIndex) {
-      const track = document.createElement("div");
-      track.className = "marquee" + (rowIndex ? " reverse" : "");
-      const doubled = row.concat(row);
-      track.innerHTML = doubled.map(function(review) {
-        return '<article class="review-card"><div><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“' + review.text + '”</blockquote></div><footer><strong>' + review.name + '</strong><span>' + review.time + '</span></footer></article>';
-      }).join("");
-      marqueeHost.appendChild(track);
-    });
-
     document.querySelectorAll(".faq-question").forEach(function(button) {
       button.addEventListener("click", function() {
         const expanded = button.getAttribute("aria-expanded") === "true";
@@ -1078,5 +1185,6 @@
     if (sessionStorage.getItem("mulan-offers-seen") === "true") announcement.hidden = true;
     else document.body.classList.add("locked");
   </script>
+  <script src="https://widgets.sociablekit.com/google-reviews/widget.js" defer></script>
 </body>
 </html>
